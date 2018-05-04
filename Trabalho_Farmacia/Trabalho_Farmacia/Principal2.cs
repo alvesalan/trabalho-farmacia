@@ -8,9 +8,44 @@ namespace Trabalho_Farmacia
     class Principal2
     {
         SistemaFuncionarios sistemafuncionarios = new SistemaFuncionarios();
+        SistemaClientes sistemaclientes = new SistemaClientes();
 
-        public void SistemaClientes()
+        
+            public void SistemaClientes()
         {
+            
+                Console.Clear(); 
+               Console.WriteLine(@"1- Cadastrar Cliente  
+2- Editar Clientes   
+3- Buscar Clientes  
+4- Listar Clientes");
+                Console.WriteLine("");
+                Console.Write("Escolha sua opção: ");
+                int MenuSistemaCliente = Convert.ToInt32(Console.ReadLine());
+
+                while (MenuSistemaCliente != 20)
+                {
+                    switch (MenuSistemaCliente)
+                    {
+                        case 1:
+                            sistemaclientes.CadastroCliente();
+
+                            break;
+                        case 2:
+                            sistemaclientes.Editarcliente();
+                            break;
+                        case 3:
+                             sistemaclientes.Buscarcliente();
+                            break;
+                        case 4:
+                             sistemaclientes.ListarCliente();
+                            break;
+                   
+
+                }
+                    SistemaFuncionarios();
+
+        }
 
         }
         internal void SistemaFuncionarios()
