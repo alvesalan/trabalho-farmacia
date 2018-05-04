@@ -43,7 +43,7 @@ namespace Trabalho_Farmacia
                    
 
                 }
-                    SistemaFuncionarios();
+                    SistemaClientes();
 
         }
 

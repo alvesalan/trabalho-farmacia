@@ -48,7 +48,9 @@ namespace Trabalho_Farmacia
             }
             if (posicao != -1)
             {
-                Console.WriteLine("digite seu nome: ");
+                // Coloque informaçoes
+
+                Console.WriteLine("digite nome: ");
                 cliente[posicao] = Console.ReadLine();
                 Console.WriteLine("Dijite seu CPF: ");
                 cpf[posicao] = Convert.ToInt32(Console.ReadLine());

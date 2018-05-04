@@ -106,6 +106,9 @@ namespace Trabalho_Farmacia
                 Console.Write("Telefone: ");
                 Salario[Posiçao] = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Dados alterados com sucesso ");
+
+                // Apos editar o programa nao salva o novo cadastro editado
+                // depois de editar nao volta ao menu
             }
             else
             {
