@@ -51,6 +51,7 @@ namespace Trabalho_Farmacia
             Console.Write("Telefone: ");
             Salario[Atual] = Convert.ToInt32(Console.ReadLine());
 
+            Atual++;
            
 
 
@@ -75,35 +76,35 @@ namespace Trabalho_Farmacia
 
             if (Posiçao != -1)
             {
-                Console.Write("   Nome: " + Nomes[Atual] + 
-                    "\n   Cargo: " + Cargo[Atual] + 
-                    "\n   Salario: " + Salario[Atual] + 
-                    "\n   Cpf: " + Cpf[Atual] + 
-                    "\n   N° Carteira de trabalho: " + Carteiradetrabalho[Atual] + 
-                    "\n   Endereço: " + Endereço[Atual] + 
-                    "\n   Salario: " +  Salario[Atual]);
+                Console.Write("   Nome: " + Nomes[Posiçao] +
+                    "\n   Cargo: " + Cargo[Posiçao] +
+                    "\n   Salario: " + Salario[Posiçao] +
+                    "\n   Cpf: " + Cpf[Posiçao] +
+                    "\n   N° Carteira de trabalho: " + Carteiradetrabalho[Posiçao] +
+                    "\n   Endereço: " + Endereço[Posiçao] +
+                    "\n   Salario: " + Salario[Posiçao]);
                 Console.WriteLine("");
 
                 Console.Write("Nome: ");
-                Nomes[Atual] = Console.ReadLine();
+                Nomes[Posiçao] = Console.ReadLine();
 
                 Console.Write("Cargo: ");
-                Cargo[Atual] = Console.ReadLine();
+                Cargo[Posiçao] = Console.ReadLine();
 
                 Console.Write("Salario: ");
-                Salario[Atual] = Convert.ToInt32(Console.ReadLine());
+                Salario[Posiçao] = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Cpf: ");
-                Cpf[Atual] = Convert.ToInt32(Console.ReadLine());
+                Cpf[Posiçao] = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Carteira de trabalho: ");
-                Carteiradetrabalho[Atual] = Convert.ToInt32(Console.ReadLine());
+                Carteiradetrabalho[Posiçao] = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Endereço: ");
-                Endereço[Atual] = Console.ReadLine();
+                Endereço[Posiçao] = Console.ReadLine();
 
                 Console.Write("Telefone: ");
-                Salario[Atual] = Convert.ToInt32(Console.ReadLine());
+                Salario[Posiçao] = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Dados alterados com sucesso ");
             }
             else

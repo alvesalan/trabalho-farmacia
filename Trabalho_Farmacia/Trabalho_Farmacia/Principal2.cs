@@ -54,13 +54,13 @@ namespace Trabalho_Farmacia
 
 
 
-        internal void SistemaProdultos()
+        public void SistemaProdultos()
         {
             throw new NotImplementedException();
         }
 
 
-        internal void SistemaVagas()
+        public void SistemaVagas()
         {
             throw new NotImplementedException();
         }
