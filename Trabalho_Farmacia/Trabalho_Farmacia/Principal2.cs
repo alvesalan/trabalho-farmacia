@@ -14,39 +14,39 @@ namespace Trabalho_Farmacia
         }
         internal void SistemaFuncionarios()
         {
-
-            Console.WriteLine(@"1- Cadastrar Funcionario  
+               Console.WriteLine(@"1- Cadastrar Funcionario  
 2- Editar Funcionario   
 3- Buscar Funcionario   
 4- Listar Funcionario");
+                Console.WriteLine("");
+                Console.Write("Escolha sua opção: ");
+                int MenuSistemaFuncionario = Convert.ToInt32(Console.ReadLine());
 
-            int MenuSistemaFuncionario = 0;
-
-            while (MenuSistemaFuncionario != 20)
-            {
-                switch (MenuSistemaFuncionario)
+                while (MenuSistemaFuncionario != 20)
                 {
-                    case 1:
-                        sistemafuncionarios.SistemaFuncionarios2();
+                    switch (MenuSistemaFuncionario)
+                    {
+                        case 1:
+                            sistemafuncionarios.SistemaFuncionarios2();
 
-                        break;
-                    case 2:
+                            break;
+                        case 2:
 
-                        break;
-                    case 3:
+                            break;
+                        case 3:
 
-                        break;
-                    case 4:
+                            break;
+                        case 4:
 
-                        break;
+                            break;
+                   
+
                 }
+
 
             }
 
-
         }
-
-
 
 
 
@@ -62,4 +62,4 @@ namespace Trabalho_Farmacia
         {
             throw new NotImplementedException();
         }
-    }  }     
+}    }     

@@ -23,19 +23,34 @@ namespace Trabalho_Farmacia
 
         internal void SistemaFuncionarios2()
         {
-            //Cadastrar Funcionario
+            
+                //Cadastrar Funcionario
 
-            for (int i = 0; i < Tamanho; i++)
-            {
-            Console.WriteLine("Nome: ");
-            Console.WriteLine("Cargo: ");
-            Console.WriteLine("Salario: ");
-            Console.WriteLine("Cpf: ");
-            Console.WriteLine("Carteira de trabalho: ");
-            Console.WriteLine("Endereço: ");
-            Console.WriteLine("Telefone: ");
+                for (int i = 0; i < Tamanho; i++)
+                {
+                    Console.Write("Nome: ");
+                    Nomes[i] = Console.ReadLine();
 
-            }
+                    Console.Write("Cargo: ");
+                    Cargo[i] = Console.ReadLine();
+
+                    Console.Write("Salario: ");
+                    Salario[i] = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Cpf: ");
+                    Cpf[i] = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Carteira de trabalho: ");
+                    Carteiradetrabalho[i] = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Endereço: ");
+                    Endereço[i] = Console.ReadLine();
+
+                    Console.Write("Telefone: ");
+                    Salario[i] = Convert.ToInt32(Console.ReadLine());
+                    
+               
+                }
         }
     }
 }
