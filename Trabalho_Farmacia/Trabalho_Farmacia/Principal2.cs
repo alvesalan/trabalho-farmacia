@@ -11,6 +11,7 @@ namespace Trabalho_Farmacia
 
         public void SistemaClientes()
         {
+
         }
         internal void SistemaFuncionarios()
         {

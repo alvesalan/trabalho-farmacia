@@ -80,12 +80,17 @@ namespace Trabalho_Farmacia
 
                 }
             }
+        }
+        public void ListarCliente()
+        {
 
         }
 
-    }
 
+    }
 }
+
+
 
 
 
