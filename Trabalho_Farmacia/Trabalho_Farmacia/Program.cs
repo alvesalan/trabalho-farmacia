@@ -10,10 +10,8 @@ namespace Trabalho_Farmacia
     {
         static void Main(string[] args)
         {
-            new SistemaClientes();
-            new SistemaProdultos();
-            new SistemaFuncionarios();
-            new SistemaVagas();
+            new Principal();
+
         }
     }
 }

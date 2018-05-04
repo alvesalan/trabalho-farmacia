@@ -42,7 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="Principal.cs" />
+    <Compile Include="Principal2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SistemaClientes.cs" />
+    <Compile Include="SistemaFuncionarios.cs" />
+    <Compile Include="SistemaProdultos.cs" />
+    <Compile Include="SistemaVagas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
