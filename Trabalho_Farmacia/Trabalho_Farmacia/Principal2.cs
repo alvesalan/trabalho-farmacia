@@ -14,6 +14,7 @@ namespace Trabalho_Farmacia
         }
         internal void SistemaFuncionarios()
         {
+                Console.Clear(); 
                Console.WriteLine(@"1- Cadastrar Funcionario  
 2- Editar Funcionario   
 3- Buscar Funcionario   
@@ -31,7 +32,7 @@ namespace Trabalho_Farmacia
 
                             break;
                         case 2:
-
+                            sistemafuncionarios.EditarFuncionario();
                             break;
                         case 3:
 
@@ -42,6 +43,7 @@ namespace Trabalho_Farmacia
                    
 
                 }
+                    SistemaFuncionarios();
 
 
             }

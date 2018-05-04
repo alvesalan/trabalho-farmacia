@@ -7,50 +7,119 @@ namespace Trabalho_Farmacia
 {
     class SistemaFuncionarios
     {
-        int Tamanho = 10;
 
-        string[] Nomes = new string[1];
-        string[] Cargo = new string[1];
-        string[] Endereço = new string[1];
+        string[] Nomes = new string[100];
+        string[] Cargo = new string[100];
+        string[] Endereço = new string[100];
 
-        double[] Salario = new double[1];
+        double[] Salario = new double[100];
 
-        int[] Cpf = new int[1];
-        int[] Carteiradetrabalho = new int[1];
-        int[] Telefone = new int[1];
+        int[] Cpf = new int[100];
+        int[] Carteiradetrabalho = new int[100];
+        int[] Telefone = new int[100];
+        int Atual = 0;
 
 
-
-        internal void SistemaFuncionarios2()
+        public void SistemaFuncionarios2()
         {
-            
-                //Cadastrar Funcionario
+            Console.Clear();
 
-                for (int i = 0; i < Tamanho; i++)
-                {
-                    Console.Write("Nome: ");
-                    Nomes[i] = Console.ReadLine();
 
-                    Console.Write("Cargo: ");
-                    Cargo[i] = Console.ReadLine();
 
-                    Console.Write("Salario: ");
-                    Salario[i] = Convert.ToInt32(Console.ReadLine());
+            //Cadastrar Funcionario
 
-                    Console.Write("Cpf: ");
-                    Cpf[i] = Convert.ToInt32(Console.ReadLine());
 
-                    Console.Write("Carteira de trabalho: ");
-                    Carteiradetrabalho[i] = Convert.ToInt32(Console.ReadLine());
 
-                    Console.Write("Endereço: ");
-                    Endereço[i] = Console.ReadLine();
+            Console.Write("Nome: ");
+            Nomes[Atual] = Console.ReadLine();
 
-                    Console.Write("Telefone: ");
-                    Salario[i] = Convert.ToInt32(Console.ReadLine());
-                    
-               
-                }
+            Console.Write("Cargo: ");
+            Cargo[Atual] = Console.ReadLine();
+
+            Console.Write("Salario: ");
+            Salario[Atual] = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Cpf: ");
+            Cpf[Atual] = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Carteira de trabalho: ");
+            Carteiradetrabalho[Atual] = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Endereço: ");
+            Endereço[Atual] = Console.ReadLine();
+
+            Console.Write("Telefone: ");
+            Salario[Atual] = Convert.ToInt32(Console.ReadLine());
+
+           
+
+
+
         }
+
+
+        public void EditarFuncionario()
+        {
+            Console.WriteLine("Digite o nome do funcionario a ser editado: ");
+            string NomePesquisado = Console.ReadLine().ToLower().Trim();
+
+            int Posiçao = -1;
+
+            for (int i = 0; i < Atual; i++)
+            {
+                if (NomePesquisado == Nomes[i])
+                {
+                    Posiçao = i;
+                }
+            }
+
+            if (Posiçao != -1)
+            {
+                Console.Write("   Nome: " + Nomes[Atual] + 
+                    "\n   Cargo: " + Cargo[Atual] + 
+                    "\n   Salario: " + Salario[Atual] + 
+                    "\n   Cpf: " + Cpf[Atual] + 
+                    "\n   N° Carteira de trabalho: " + Carteiradetrabalho[Atual] + 
+                    "\n   Endereço: " + Endereço[Atual] + 
+                    "\n   Salario: " +  Salario[Atual]);
+                Console.WriteLine("");
+
+                Console.Write("Nome: ");
+                Nomes[Atual] = Console.ReadLine();
+
+                Console.Write("Cargo: ");
+                Cargo[Atual] = Console.ReadLine();
+
+                Console.Write("Salario: ");
+                Salario[Atual] = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Cpf: ");
+                Cpf[Atual] = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Carteira de trabalho: ");
+                Carteiradetrabalho[Atual] = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Endereço: ");
+                Endereço[Atual] = Console.ReadLine();
+
+                Console.Write("Telefone: ");
+                Salario[Atual] = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Dados alterados com sucesso ");
+            }
+            else
+            {
+                Console.WriteLine("Regitro não encontrado !!");
+
+
+            }
+            Console.ReadKey();
+
+        }
+
+
+
+
+
     }
 }
+

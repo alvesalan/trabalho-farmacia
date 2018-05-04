@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +16,13 @@ namespace Trabalho_Farmacia
         // Apresentar menu para o usuario 
         public void Menu()
         {
-            
+
             Console.WriteLine(@"1 -  Sistema Cliente
 2 - Sistema Funcionario
 3 - Sistema Produltos
 4 - Sistema Vagas
 20- Sair");
-            
+
         }
 
         public void GerirMenu()
