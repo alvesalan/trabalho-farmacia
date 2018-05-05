@@ -48,18 +48,49 @@ namespace Trabalho_Farmacia
         }
 
         }
-        internal void SistemaFuncionarios()
-        {
-                Console.Clear(); 
-               Console.WriteLine(@"1- Cadastrar Funcionario  
-2- Editar Funcionario   
-3- Buscar Funcionario   
-4- Listar Funcionario");
-                Console.WriteLine("");
-                Console.Write("Escolha sua opção: ");
-                int MenuSistemaFuncionario = Convert.ToInt32(Console.ReadLine());
+        
+           
 
-                while (MenuSistemaFuncionario != 20)
+            public void SistemaFuncionarios()
+            {
+                int MenuSistemaFuncionario = 0;
+                try
+                {	
+            Console.Clear();
+            Console.WriteLine(@"                     ________________________________
+                     | 1- |  Cadastrar Funcionario   |
+                     | 2- |  Editar Funcionario      |
+                     | 3- |  Buscar Funcionario      |
+                     | 4- |  Listar Funcionario      |
+                     |____|__________________________|
+                     | 20-|  Voltar Menu Anterior    |
+                     |____|__________________________|");
+            Console.WriteLine("");
+
+                             
+	 
+                    Console.Write("Escolha sua opção: ");
+                    MenuSistemaFuncionario = Convert.ToInt32(Console.ReadLine());	
+	                    }
+	                catch (Exception)
+	                    {
+                            Console.Clear();
+                            Console.WriteLine(@"                     ________________________________
+                     | 1- |  Cadastrar Funcionario   |
+                     | 2- |  Editar Funcionario      |
+                     | 3- |  Buscar Funcionario      |
+                     | 4- |  Listar Funcionario      |
+                     |____|__________________________|
+                     | 20-|  Voltar Menu Anterior    |
+                     |____|__________________________|");
+                            Console.WriteLine("");
+		                    Console.WriteLine("Por favor digite apenas numeros");
+                    Console.Write("Escolha sua opção: ");
+                    MenuSistemaFuncionario = Convert.ToInt32(Console.ReadLine());
+	                    }
+              
+
+                 while (MenuSistemaFuncionario != 20)
                 {
                     switch (MenuSistemaFuncionario)
                     {
