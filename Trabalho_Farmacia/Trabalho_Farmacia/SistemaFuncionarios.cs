@@ -20,7 +20,7 @@ namespace Trabalho_Farmacia
         int Atual = 0;
 
 
-        public void SistemaFuncionarios2()
+        public void CadastroFuncionario()
         {
             Console.Clear();
 
@@ -120,8 +120,8 @@ namespace Trabalho_Farmacia
                     "\n   Salario: " + Salario[Posiçao] +
                     "\n   Cpf: " + Cpf[Posiçao] +
                     "\n   N° Carteira de trabalho: " + Carteiradetrabalho[Posiçao] +
-                    "\n   Endereço: " + Endereço[Posiçao] +
-                    "\n   Salario: " + Salario[Posiçao]);
+                    "\n   Endereço: " + Endereço[Posiçao]);
+                   
                 Console.WriteLine("");
 
                 Console.Write("Nome: ");
@@ -194,9 +194,51 @@ namespace Trabalho_Farmacia
 
             }
             Console.ReadKey();
-
         }
 
+
+
+            public void BuscarFuncionario()
+            {
+                Console.Write("Digite o nome do funcionario: ");
+                string NomeBusca = Console.ReadLine();
+                bool Achou = false;
+                for (int i = 0; i < Atual; i++)
+                {
+                    if (NomeBusca == Nomes[i])
+                    {
+
+                        Console.WriteLine(string.Format(@"\nNome: " + Nomes[i] + 
+                        "\nCargo: "+ Cargo[i] +
+                        "\nSalario: " + Salario[i] +
+                        "\nCpf: "+ Cpf[i] +
+                        "\nN° Carteira da trabalho: " + Carteiradetrabalho[i] + 
+                        "\nEndereço: " + Endereço[i]));
+                    }
+                    Achou = true;
+                    break;
+                }
+                    if(!Achou)
+                    {
+                        Console.WriteLine("Nome não encontrado !!");
+                    }
+
+                    Console.ReadKey();
+                
+                
+            }
+
+
+            public void ListarFuncionario()
+            {
+                Console.WriteLine("Lista de funcionarios: ");
+                for (int i = 0; i < Atual; i++)
+                {
+                    Console.WriteLine(string.Format("Nome {0} : " + Nomes[i], i + 1));
+                }
+                Console.ReadKey();
+            }
+       
 
 
 

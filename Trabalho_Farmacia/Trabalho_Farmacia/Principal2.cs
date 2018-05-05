@@ -9,8 +9,13 @@ namespace Trabalho_Farmacia
     {
         SistemaFuncionarios sistemafuncionarios = new SistemaFuncionarios();
         SistemaClientes sistemaclientes = new SistemaClientes();
-
+        SistemaProdultos sistemaprodultos = new SistemaProdultos();
         
+        
+
+//_____________//______________//___________________//__________________//__________________//____________________        
+
+
             public void SistemaClientes()
         {
             
@@ -49,7 +54,7 @@ namespace Trabalho_Farmacia
 
         }
         
-           
+//_____________//_________________//__________________//______________________//______________________//___________________//_________           
 
             public void SistemaFuncionarios()
             {
@@ -95,16 +100,19 @@ namespace Trabalho_Farmacia
                     switch (MenuSistemaFuncionario)
                     {
                         case 1:
-                            sistemafuncionarios.SistemaFuncionarios2();
+                            sistemafuncionarios.CadastroFuncionario();
 
                             break;
                         case 2:
                             sistemafuncionarios.EditarFuncionario();
+
                             break;
                         case 3:
+                            sistemafuncionarios.BuscarFuncionario();
 
                             break;
                         case 4:
+                            sistemafuncionarios.ListarFuncionario();
 
                             break;
                    
@@ -113,20 +121,51 @@ namespace Trabalho_Farmacia
                     SistemaFuncionarios();
 
 
-            }
-
+            }         
         }
 
 
-
+//____________________//_______________//____________________//__________________//_______________________//______________________//________
 
 
         public void SistemaProdultos()
         {
-            throw new NotImplementedException();
+
+            Console.Clear();
+            Console.WriteLine(@"                           _____ _______________________
+                       | 1-  |  Cadastrar produlto      | 
+                       | 2-  |  Editar produlto         |
+                       | 3-  |  Buscar produlto         |
+                       | 3-  |  Listar produltos        |
+                       |_____|__________________________|
+                       | 20- |  Voltar ao menu anterior |
+                       |_____|__________________________|");
+
+            Console.Write("Escolha sua opção: ");
+            int MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+            while (MenuSistemaProdultos != 20)
+            {
+                switch (MenuSistemaProdultos)
+                {
+                    case 1:
+                        sistemaprodultos.CadastrarProdulto();
+                        break;
+                    case 2:
+                        sistemaprodultos.EditarProdulto();
+                        break;
+                    case 3:
+                        sistemaprodultos.BuscarProdulto();
+                        break;
+                    case 4:
+                        sistemaprodultos.ListarProdultos();
+                        break;
+                }
+                SistemaProdultos();
+            }
+            
         }
 
-
+//______________________//_________________//_________________//______________________//____________________//___________________//________
         public void SistemaVagas()
         {
             throw new NotImplementedException();
