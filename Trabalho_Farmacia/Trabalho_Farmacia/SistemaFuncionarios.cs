@@ -220,7 +220,10 @@ namespace Trabalho_Farmacia
                 }
                     if(!Achou)
                     {
-                        Console.WriteLine("Nome não encontrado !!");
+                        Console.Write("\nNome não encontrado !!" + 
+                            "\n" +
+                            "Para continua aperte uma tecla: ");
+
                     }
 
                     Console.ReadKey();

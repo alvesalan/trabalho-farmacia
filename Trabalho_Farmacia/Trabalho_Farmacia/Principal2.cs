@@ -132,11 +132,11 @@ namespace Trabalho_Farmacia
         {
 
             Console.Clear();
-            Console.WriteLine(@"                           _____ _______________________
+            Console.WriteLine(@"                        _____ __________________________
                        | 1-  |  Cadastrar produlto      | 
                        | 2-  |  Editar produlto         |
                        | 3-  |  Buscar produlto         |
-                       | 3-  |  Listar produltos        |
+                       | 4-  |  Listar produltos        |
                        |_____|__________________________|
                        | 20- |  Voltar ao menu anterior |
                        |_____|__________________________|");

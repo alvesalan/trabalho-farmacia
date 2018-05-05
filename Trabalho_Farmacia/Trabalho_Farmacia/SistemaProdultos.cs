@@ -11,7 +11,7 @@ namespace Trabalho_Farmacia
         string[] Fornecedor = new string[100];
         int[] Quantidade = new int[100];
         double[] PreçoUnitario  = new double[100];
-        double[] DataValidade = new double[100];
+        
         
         int Atual = 0;
 
@@ -51,6 +51,7 @@ namespace Trabalho_Farmacia
                PreçoUnitario[Atual] = Convert.ToDouble(Console.ReadLine());
            }
 
+           
            Atual++;
             
         }
@@ -61,9 +62,61 @@ namespace Trabalho_Farmacia
 
         internal void EditarProdulto()
         {
+            Console.Write("Digite o nome do produlto a ser editado: ");
+            string EditarNomeProdulto = Console.ReadLine();
+            int Posição = -1;
+            for (int i = 0; i < Atual; i++)
+            {
+                if (EditarNomeProdulto == Nome[i])
+                {
+                    Posição = i;
+                } 
+            }
+            if (Posição != -1)
+            {
+
+                Console.WriteLine("\nNome: " + Nome[Posição] +
+                    "\nFornecedor: " + Fornecedor[Posição] +
+                    "\nQuantidade: " + Quantidade[Posição] +
+                    "\nPreço unitario: " + PreçoUnitario[Posição] + 
+                    "\n\n");
+
+                Console.Write("Nome do produlto: ");
+                Nome[Posição] = Console.ReadLine();
+
+                Console.Write("Fornecedor: ");
+                Fornecedor[Posição] = Console.ReadLine();
+
+                try
+                {
+                    Console.Write("Quantidade de produlto: ");
+                    Quantidade[Posição] = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Por favor digite apenas numeros!!");
+                    Console.Write("Quantidade de produlto: ");
+                    Quantidade[Posição] = Convert.ToInt32(Console.ReadLine());
+                }
+
+                try
+                {
+                    Console.Write("Preço unitario do prdulto: ");
+                    PreçoUnitario[Posição] = Convert.ToDouble(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Por favor digite apenas numeros !!");
+                    Console.Write("Preço unitario do prdulto: ");
+                    PreçoUnitario[Posição] = Convert.ToDouble(Console.ReadLine());
+                }
+            }
+            else
+            {
+                Console.WriteLine("Reagistro não encontrado !!");
+                Console.ReadKey();
+            }
             
-            Console.WriteLine("aaaaaaaaa");
-            Console.ReadKey();
         }
 
 
@@ -72,9 +125,29 @@ namespace Trabalho_Farmacia
 
         internal void BuscarProdulto()
         {
-           
-            Console.WriteLine("aaaaaaaaa");
-            Console.ReadKey();
+            Console.Write("Digite o nome do prdulto: ");
+            string NomeProdulto = Console.ReadLine();
+
+            for (int i = 0; i < Atual; i++)
+            {
+                if (NomeProdulto == Nome[i])
+                {
+                    Console.Write("\nNome: " + Nome[i] +
+                        "\nFornecedor: " + Fornecedor[i] +
+                        "\nQuantidade: " + Quantidade[i] +
+                        "\nPreço unitario: " + PreçoUnitario[i] +
+                        "\n\n Para voltar aperte uma tecla !!: ");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.WriteLine("Registro não encontrado, tente novamente ou cadastre esse produlto em nosso sistema !!" + 
+                        "Aperte uma tecla para continuar: ");
+                    Console.ReadKey();
+                   
+                }
+            }
+            
         }
 
         
