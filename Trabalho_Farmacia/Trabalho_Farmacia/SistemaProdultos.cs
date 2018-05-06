@@ -62,6 +62,7 @@ namespace Trabalho_Farmacia
 
         internal void EditarProdulto()
         {
+            Console.Clear();
             Console.Write("Digite o nome do produlto a ser editado: ");
             string EditarNomeProdulto = Console.ReadLine().ToLower().Trim(); 
             int Posição = -1;
@@ -74,7 +75,7 @@ namespace Trabalho_Farmacia
             }
             if (Posição != -1)
             {
-
+                Console.Clear();
                 Console.WriteLine("\nNome: " + Nome[Posição] +
                     "\nFornecedor: " + Fornecedor[Posição] +
                     "\nQuantidade: " + Quantidade[Posição] +
@@ -125,9 +126,10 @@ namespace Trabalho_Farmacia
 
         internal void BuscarProdulto()
         {
+            Console.Clear();
             Console.Write("Digite o nome do prdulto: ");
             string NomeProdulto = Console.ReadLine().ToLower().Trim(); ;
-
+            bool achou = false;
             for (int i = 0; i < Atual; i++)
             {
                 if (NomeProdulto == Nome[i])
@@ -138,14 +140,16 @@ namespace Trabalho_Farmacia
                         "\nPreço unitario: " + PreçoUnitario[i] +
                         "\n\n Para voltar aperte uma tecla !!: ");
                     Console.ReadKey();
+                    achou = true;
+                    break;
                 }
-                else
-                {
-                    Console.WriteLine("Registro não encontrado, tente novamente ou cadastre esse produlto em nosso sistema !!" + 
-                        "Aperte uma tecla para continuar: ");
-                    Console.ReadKey();
-                   
-                }
+              }
+            if (achou == false)
+            {
+                
+                Console.WriteLine("Registro não encontrado, tente novamente ou cadastre esse produlto em nosso sistema !!" +
+                    " ");
+                Console.ReadKey();
             }
             
         }
@@ -155,10 +159,16 @@ namespace Trabalho_Farmacia
 
         internal void ListarProdultos()
         {
-            Console.WriteLine("Lista de Produltos: ");
+            Console.Clear();
+            Console.WriteLine("Lista de Produltos");
             for (int i = 0; i < Atual; i++)
             {
-                Console.WriteLine(string.Format("Nome {0} : " + Nome[i] + " Fornecedor: " + Fornecedor[i], i + 1));
+                Console.Write(string.Format("Nome {0} : " + Nome[i] + 
+                    "\n Fornecedor: " + Fornecedor[i] +
+                    "\n Quantidade: " + Quantidade[i] +
+                    "\n Valor unitario: " + PreçoUnitario[i] + 
+                    "\n Valor Total: " + (Quantidade[i] * PreçoUnitario[i]),i + 1));
+                Console.WriteLine("");
                 Console.WriteLine("");
             }
             Console.ReadKey();

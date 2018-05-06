@@ -249,10 +249,13 @@ namespace Trabalho_Farmacia
 
             public void ListarFuncionario()
             {
-                Console.WriteLine("Lista de funcionarios: ");
+                Console.WriteLine("Lista de funcionarios");
+                Console.WriteLine("");
                 for (int i = 0; i < Atual; i++)
                 {
-                    Console.WriteLine(string.Format("Nome {0} : " + Nomes[i] + "   Cargo: "+ Cargo[i], i + 1));
+                    Console.WriteLine(string.Format("Nome {0} : " + Nomes[i] + 
+                        "\nCargo: "+ Cargo[i], i + 1));
+                    Console.WriteLine("");
                 }
                 Console.ReadKey();
             }
