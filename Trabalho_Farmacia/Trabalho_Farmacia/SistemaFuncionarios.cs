@@ -14,11 +14,11 @@ namespace Trabalho_Farmacia
 
         double[] Salario = new double[100];
 
-        double[] Cpf = new double[100];
-        double[] Carteiradetrabalho = new double[100];
-        int[] Telefone = new int[100];
+        string[] Cpf = new string[100];
+        string[] Carteiradetrabalho = new string[100];
+        string[] Telefone = new string[100];
         int Atual = 0;
-
+        int Posiçao = -1;
 
         public void CadastroFuncionario()
         {
@@ -34,7 +34,7 @@ namespace Trabalho_Farmacia
             Nomes[Atual] = Console.ReadLine().ToLower().Trim();
 
             Console.Write("Cargo: ");
-            Cargo[Atual] = Console.ReadLine();
+            Cargo[Atual] = Console.ReadLine().ToLower().Trim();
 
             try
             {
@@ -51,41 +51,41 @@ namespace Trabalho_Farmacia
 
             try
             {
-                Console.Write("Cpf   (Apenas numeros): ");
-                Cpf[Atual] = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Cpf: ");
+                Cpf[Atual] = Console.ReadLine();
             }
             catch (Exception)
             {
                 Console.WriteLine("Por Favor digite apenas numeros");
-                Console.Write("Cpf   (Apenas numeros): ");
-                Cpf[Atual] = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Cpf: ");
+                Cpf[Atual] = Console.ReadLine();
             }
 
             try
             {
-                Console.Write("Carteira de trabalho  (Apenas numeros): ");
-                Carteiradetrabalho[Atual] = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Carteira de trabalho: ");
+                Carteiradetrabalho[Atual] = Console.ReadLine();
             }
             catch (Exception)
             {
                 Console.WriteLine("Por Favor digite apenas numeros");
-                Console.Write("Carteira de trabalho  (Apenas numeros): ");
-                Carteiradetrabalho[Atual] = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Carteira de trabalho: ");
+                Carteiradetrabalho[Atual] = Console.ReadLine();
             }
             
 
             Console.Write("Endereço: ");
-            Endereço[Atual] = Console.ReadLine();
+            Endereço[Atual] = Console.ReadLine().ToLower().Trim();
             try
             {
-                Console.Write("Telefone  (Ex: 4798887777)  : ");
-                Salario[Atual] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Telefone: ");
+                Telefone[Atual] = Console.ReadLine();
             }
             catch (Exception)
             {
                 Console.WriteLine("Por Favor digite apenas numeros");
-                Console.Write("Telefone  (Ex: 4798887777)  : ");
-                Salario[Atual] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Telefone: ");
+                Telefone[Atual] = Console.ReadLine();
             }
             
 
@@ -101,9 +101,8 @@ namespace Trabalho_Farmacia
         {
             Console.Write("Digite o nome do funcionario a ser editado: ");
             string NomePesquisado = Console.ReadLine().ToLower().Trim();
-            
-              
-             int Posiçao = -1;
+
+
 
             for (int i = 0; i < Atual; i++)
             {
@@ -111,10 +110,18 @@ namespace Trabalho_Farmacia
                 {
                     Posiçao = i;
                 }
+                else if (NomePesquisado.Substring(0, 3) == Nomes[i].Substring(0, 3))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Em nosso sistema possue o nome: " + Nomes[i]);
+                    Console.WriteLine("Caso seja o nome acima volte em (Editar e digite o nome corretamente)");
+                }
+
             }
 
             if (Posiçao != -1)
             {
+                Console.Clear();
                 Console.Write("   Nome: " + Nomes[Posiçao] +
                     "\n   Cargo: " + Cargo[Posiçao] +
                     "\n   Salario: " + Salario[Posiçao] +
@@ -128,7 +135,7 @@ namespace Trabalho_Farmacia
                 Nomes[Posiçao] = Console.ReadLine().ToLower().Trim(); 
 
                 Console.Write("Cargo: ");
-                Cargo[Posiçao] = Console.ReadLine();
+                Cargo[Posiçao] = Console.ReadLine().ToLower().Trim();
                 try
                 {
                     Console.Write("Salario: ");
@@ -145,25 +152,25 @@ namespace Trabalho_Farmacia
                 try
                 {
                     Console.Write("Cpf: ");
-                    Cpf[Posiçao] = Convert.ToDouble(Console.ReadLine());
+                    Cpf[Posiçao] = Console.ReadLine();
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Por Favor digite apenas numeros");
                     Console.Write("Cpf: ");
-                    Cpf[Posiçao] = Convert.ToDouble(Console.ReadLine());
+                    Cpf[Posiçao] = Console.ReadLine();
                 }
 
                 try
                 {
-                    Console.Write("Carteira de trabalho  (Apenas numeros): ");
-                    Carteiradetrabalho[Posiçao] = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Carteira de trabalho: ");
+                    Carteiradetrabalho[Posiçao] = Console.ReadLine();
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Por Favor digite apenas numeros");
-                    Console.Write("Carteira de trabalho  (Apenas numeros): ");
-                    Carteiradetrabalho[Posiçao] = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Carteira de trabalho: ");
+                    Carteiradetrabalho[Posiçao] = Console.ReadLine();
                 }
                 
 
@@ -172,15 +179,15 @@ namespace Trabalho_Farmacia
 
                 try
                 {
-                    Console.Write("Telefone  (Ex: 4798887777)  : ");
-                    Salario[Posiçao] = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Telefone: ");
+                    Telefone[Posiçao] = Console.ReadLine();
                     
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Por Favor digite apenas numeros");
-                    Console.Write("Telefone  (Ex: 4798887777)  : ");
-                    Salario[Posiçao] = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Telefone: ");
+                    Telefone[Posiçao] = Console.ReadLine();
                 }
 
                 Console.WriteLine("Dados alterados com sucesso ");
@@ -189,7 +196,9 @@ namespace Trabalho_Farmacia
             }
             else
             {
-                Console.WriteLine("Regitro não encontrado !!");
+                
+                Console.WriteLine("Regitro não encontrado !!" + 
+                    "\n Para continuar aperte uma tecla: ");
 
 
             }
@@ -201,22 +210,25 @@ namespace Trabalho_Farmacia
             public void BuscarFuncionario()
             {
                 Console.Write("Digite o nome do funcionario: ");
-                string NomeBusca = Console.ReadLine();
+                string NomeBusca = Console.ReadLine().ToLower().Trim(); 
                 bool Achou = false;
-                for (int i = 0; i < Atual; i++)
+
+                for (int j = 0; j < Atual; j++)
                 {
-                    if (NomeBusca == Nomes[i])
+                    if (NomeBusca == Nomes[j])
                     {
 
-                        Console.WriteLine(string.Format(@"\nNome: " + Nomes[i] + 
-                        "\nCargo: "+ Cargo[i] +
-                        "\nSalario: " + Salario[i] +
-                        "\nCpf: "+ Cpf[i] +
-                        "\nN° Carteira da trabalho: " + Carteiradetrabalho[i] + 
-                        "\nEndereço: " + Endereço[i]));
+                        Console.WriteLine(string.Format(@"Nome: " + Nomes[j] + 
+                        "\nCargo: "+ Cargo[j] +
+                        "\nSalario: " + Salario[j] +
+                        "\nCpf: "+ Cpf[j] +
+                        "\nN° Carteira da trabalho: " + Carteiradetrabalho[j] + 
+                        "\nEndereço: " + Endereço[j]));
+                        Console.WriteLine("");
+                        Achou = true;
                     }
-                    Achou = true;
-                    break;
+                   
+                    
                 }
                     if(!Achou)
                     {

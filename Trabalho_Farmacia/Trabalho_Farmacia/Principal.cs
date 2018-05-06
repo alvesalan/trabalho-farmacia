@@ -51,7 +51,7 @@ namespace Trabalho_Farmacia
                 menuEscolha = Convert.ToInt32(Console.ReadLine());
             }
             catch {
-                
+                Console.Clear();
                 Menu();
                 Console.WriteLine(@"
 Por Favor digite apenas numeros !!");

@@ -22,10 +22,10 @@ namespace Trabalho_Farmacia
         {
             Console.Clear();
             Console.Write("Nome do produlto: ");
-            Nome[Atual] = Console.ReadLine();
+            Nome[Atual] = Console.ReadLine().ToLower().Trim();
 
            Console.Write("Fornecedor: ");
-           Fornecedor[Atual] = Console.ReadLine();
+           Fornecedor[Atual] = Console.ReadLine().ToLower().Trim();
 
            try 
 	    {	        
@@ -63,7 +63,7 @@ namespace Trabalho_Farmacia
         internal void EditarProdulto()
         {
             Console.Write("Digite o nome do produlto a ser editado: ");
-            string EditarNomeProdulto = Console.ReadLine();
+            string EditarNomeProdulto = Console.ReadLine().ToLower().Trim(); 
             int Posição = -1;
             for (int i = 0; i < Atual; i++)
             {
@@ -82,10 +82,10 @@ namespace Trabalho_Farmacia
                     "\n\n");
 
                 Console.Write("Nome do produlto: ");
-                Nome[Posição] = Console.ReadLine();
+                Nome[Posição] = Console.ReadLine().ToLower().Trim(); 
 
                 Console.Write("Fornecedor: ");
-                Fornecedor[Posição] = Console.ReadLine();
+                Fornecedor[Posição] = Console.ReadLine().ToLower().Trim(); 
 
                 try
                 {
@@ -126,7 +126,7 @@ namespace Trabalho_Farmacia
         internal void BuscarProdulto()
         {
             Console.Write("Digite o nome do prdulto: ");
-            string NomeProdulto = Console.ReadLine();
+            string NomeProdulto = Console.ReadLine().ToLower().Trim(); ;
 
             for (int i = 0; i < Atual; i++)
             {
@@ -155,8 +155,11 @@ namespace Trabalho_Farmacia
 
         internal void ListarProdultos()
         {
-           
-            Console.WriteLine("aaaaaaaaa");
+            Console.WriteLine("Lista de Produltos: ");
+            for (int i = 0; i < Atual; i++)
+            {
+                Console.WriteLine(string.Format("Nome {0} : " + Nome[i], i + 1));
+            }
             Console.ReadKey();
         }
     }

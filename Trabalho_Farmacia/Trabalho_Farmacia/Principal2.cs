@@ -10,6 +10,7 @@ namespace Trabalho_Farmacia
         SistemaFuncionarios sistemafuncionarios = new SistemaFuncionarios();
         SistemaClientes sistemaclientes = new SistemaClientes();
         SistemaProdultos sistemaprodultos = new SistemaProdultos();
+       
         
         
 
@@ -118,10 +119,9 @@ namespace Trabalho_Farmacia
                    
 
                 }
-                    SistemaFuncionarios();
 
-
-            }         
+                   }
+                
         }
 
 
@@ -162,7 +162,7 @@ namespace Trabalho_Farmacia
                 }
                 SistemaProdultos();
             }
-            
+           
         }
 
 //______________________//_________________//_________________//______________________//____________________//___________________//________
