@@ -119,7 +119,7 @@ namespace Trabalho_Farmacia
                    
 
                 }
-
+                    SistemaFuncionarios();
                    }
                 
         }
@@ -140,9 +140,20 @@ namespace Trabalho_Farmacia
                        |_____|__________________________|
                        | 20- |  Voltar ao menu anterior |
                        |_____|__________________________|");
+            int MenuSistemaProdultos = 0;
+            try
+            {
 
-            Console.Write("Escolha sua opção: ");
-            int MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Escolha sua opção: ");
+                MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Por favor digite apenas numeros !!");
+                Console.Write("Escolha sua opção: ");
+                MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+                
+            }
             while (MenuSistemaProdultos != 20)
             {
                 switch (MenuSistemaProdultos)

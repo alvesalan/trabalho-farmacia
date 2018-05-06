@@ -158,7 +158,8 @@ namespace Trabalho_Farmacia
             Console.WriteLine("Lista de Produltos: ");
             for (int i = 0; i < Atual; i++)
             {
-                Console.WriteLine(string.Format("Nome {0} : " + Nome[i], i + 1));
+                Console.WriteLine(string.Format("Nome {0} : " + Nome[i] + " Fornecedor: " + Fornecedor[i], i + 1));
+                Console.WriteLine("");
             }
             Console.ReadKey();
         }

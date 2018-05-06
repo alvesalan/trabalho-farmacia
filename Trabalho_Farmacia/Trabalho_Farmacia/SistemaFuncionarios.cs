@@ -20,6 +20,9 @@ namespace Trabalho_Farmacia
         int Atual = 0;
         int Posiçao = -1;
 
+//_____//-------//_______/--------//_________/----------//-------------//________________//---------------/-_______-
+
+
         public void CadastroFuncionario()
         {
             Console.Clear();
@@ -249,7 +252,7 @@ namespace Trabalho_Farmacia
                 Console.WriteLine("Lista de funcionarios: ");
                 for (int i = 0; i < Atual; i++)
                 {
-                    Console.WriteLine(string.Format("Nome {0} : " + Nomes[i], i + 1));
+                    Console.WriteLine(string.Format("Nome {0} : " + Nomes[i] + "   Cargo: "+ Cargo[i], i + 1));
                 }
                 Console.ReadKey();
             }
