@@ -18,7 +18,7 @@ namespace Trabalho_Farmacia
         string[] Carteiradetrabalho = new string[100];
         string[] Telefone = new string[100];
         int Atual = 0;
-        int Posiçao = -1;
+        
 
 //_____//-------//_______/--------//_________/----------//-------------//________________//---------------/-_______-
 
@@ -102,6 +102,7 @@ namespace Trabalho_Farmacia
         //Editar funcionario
         public void EditarFuncionario()
         {
+            int Posiçao = -1;
             Console.Write("Digite o nome do funcionario a ser editado: ");
             string NomePesquisado = Console.ReadLine().ToLower().Trim();
 
@@ -221,14 +222,20 @@ namespace Trabalho_Farmacia
                     if (NomeBusca == Nomes[j])
                     {
 
-                        Console.WriteLine(string.Format(@"Nome: " + Nomes[j] + 
-                        "\nCargo: "+ Cargo[j] +
+                        Console.WriteLine(string.Format(@"Nome: " + Nomes[j] +
+                        "\nCargo: " + Cargo[j] +
                         "\nSalario: " + Salario[j] +
-                        "\nCpf: "+ Cpf[j] +
-                        "\nN° Carteira da trabalho: " + Carteiradetrabalho[j] + 
+                        "\nCpf: " + Cpf[j] +
+                        "\nN° Carteira da trabalho: " + Carteiradetrabalho[j] +
                         "\nEndereço: " + Endereço[j]));
                         Console.WriteLine("");
                         Achou = true;
+                    }
+                    else if (NomeBusca.Substring(0, 3) == Nomes[j].Substring(0, 3))
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Em nosso sistema possue o nome: " + Nomes[j]);
+                        Console.WriteLine("Caso seja o nome acima volte em (Buscar e digite o nome corretamente)");
                     }
                    
                     

@@ -76,6 +76,7 @@ namespace Trabalho_Farmacia
             if (Posição != -1)
             {
                 Console.Clear();
+
                 Console.WriteLine("\nNome: " + Nome[Posição] +
                     "\nFornecedor: " + Fornecedor[Posição] +
                     "\nQuantidade: " + Quantidade[Posição] +
@@ -163,6 +164,8 @@ namespace Trabalho_Farmacia
             Console.WriteLine("Lista de Produltos");
             for (int i = 0; i < Atual; i++)
             {
+                Console.WriteLine("");
+                Console.WriteLine("");
                 Console.Write(string.Format("Nome {0} : " + Nome[i] + 
                     "\n Fornecedor: " + Fornecedor[i] +
                     "\n Quantidade: " + Quantidade[i] +
