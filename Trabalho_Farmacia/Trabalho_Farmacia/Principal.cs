@@ -32,7 +32,7 @@ namespace Trabalho_Farmacia
                     |___________________________|
 
 ");
-            Console.Write("Escolha uma opção: ");
+           
 
 
 
@@ -47,7 +47,7 @@ namespace Trabalho_Farmacia
             try
             {
                 Menu();
-               
+                Console.Write("Escolha uma opção: ");
                 menuEscolha = Convert.ToInt32(Console.ReadLine());
             }
             catch {

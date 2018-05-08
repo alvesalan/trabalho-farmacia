@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp5;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,13 +22,37 @@ namespace Trabalho_Farmacia
         {
             
                 Console.Clear(); 
-               Console.WriteLine(@"1- Cadastrar Cliente  
-2- Editar Clientes   
-3- Buscar Clientes  
-4- Listar Clientes");
+               Console.WriteLine(@"                       _____ ____________________________ 
+                      | 1- |    Cadastrar Cliente       |
+                      | 2- |    Editar Clientes         |
+                      | 3- |    Buscar Clientes         |  
+                      | 4- |    Listar Clientes         |
+                      |____|____________________________|
+                      | 20-|    Voltar ao menu anterior |
+                      |____|____________________________|");
                 Console.WriteLine("");
                 Console.Write("Escolha sua opção: ");
-                int MenuSistemaCliente = Convert.ToInt32(Console.ReadLine());
+                int MenuSistemaCliente = 0;
+                try
+                {
+                    MenuSistemaCliente = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.Clear();
+                    Console.WriteLine(@"                       _____ ____________________________ 
+                      | 1- |    Cadastrar Cliente       |
+                      | 2- |    Editar Clientes         |
+                      | 3- |    Buscar Clientes         |  
+                      | 4- |    Listar Clientes         |
+                      |____|____________________________|
+                      | 20-|    Voltar ao menu anterior |
+                      |____|____________________________|");
+                    Console.WriteLine("Por favor escolha apenas numeros !!");
+                    Console.Write("Escolha sua opção: ");
+                    MenuSistemaCliente = Convert.ToInt32(Console.ReadLine());
+                }
+                
 
                 while (MenuSistemaCliente != 20)
                 {
