@@ -114,7 +114,7 @@ namespace ConsoleApp5
             }
             else
             {
-                Console.Write("nome nao emcontrado!");
+                Console.Write("nome nao encontrado!");
 
             }
             Console.ReadKey();
@@ -131,7 +131,7 @@ namespace ConsoleApp5
             {
                 if (Buscanome == cliente[i])
                 {
-                    Console.Write(string.Format("\nNome:{0}\ncpf:{0}\nendereso:{0}\ntelefole:{0}\nidade:{0}\npeso:{0}",
+                    Console.Write(string.Format("\nNome:{0}\ncpf:{1}\nendereso:{2}\ntelefole:{3}\nIdade:{4}",
                         cliente[i], cpf[i], endereco[i], fone[i], idade[i]));
                     encontrou = true;
                     break;
@@ -143,12 +143,16 @@ namespace ConsoleApp5
                     Console.WriteLine("Caso seja o nome acima volte em (Buscar e digite o nome corretamente)");
 
                 }
-                if (!encontrou)
-                {
-                    Console.WriteLine("Nome nao encontrado!!");
-                }
-                Console.ReadKey();
+                
             }
+
+            if (!encontrou)
+            {
+                Console.WriteLine("Nome nao encontrado!!");
+
+            }
+            Console.ReadKey();
+            
         }
         public void ListarCliente()
         {

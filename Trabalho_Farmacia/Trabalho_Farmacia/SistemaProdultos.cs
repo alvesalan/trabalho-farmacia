@@ -11,6 +11,11 @@ namespace Trabalho_Farmacia
         string[] Fornecedor = new string[100];
         int[] Quantidade = new int[100];
         double[] PreçoUnitario  = new double[100];
+
+        int VagaMaiorNome = 0, VagaMenorNome = int.MaxValue;
+        string NomeMaiorNome = "", NomeMenorNome = "";
+        string Nomeperiodo = "";
+        int SomaC = 0;
         
         
         int Atual = 0;
@@ -174,6 +179,44 @@ namespace Trabalho_Farmacia
                 Console.WriteLine("");
                 Console.WriteLine("");
             }
+            Console.ReadKey();
+        }
+
+        public void EstatisticaProdultos()
+        {
+            Console.WriteLine("");
+            Console.Write("Total de produltos cadatrado: " + Atual);
+
+            for (int i = 0; i < Atual; i++)
+            {
+                if (Nome[i].Length > VagaMaiorNome)
+                {
+                    VagaMaiorNome = Nome[i].Length;
+                    NomeMaiorNome = Nome[i];
+                }
+            }
+            Console.WriteLine("\n");
+            Console.Write("Nome do produlto com menor nome: " + NomeMaiorNome);
+
+            for (int i = 0; i < Atual; i++)
+            {
+                if (Nome[i].Length < VagaMenorNome)
+                {
+                    VagaMenorNome = Nome[i].Length;
+                    NomeMenorNome = Nome[i];
+                }
+            }
+            Console.WriteLine("\n");
+            Console.Write("Nome do produlto com menor nome: " + NomeMenorNome);
+
+            for (int i = 0; i < Atual; i++)
+            {
+                SomaC = SomaC + Quantidade[i];
+            }
+
+            double Media = SomaC / Atual;
+            Console.WriteLine("\n");
+            Console.WriteLine("Media da quantidade Toatal de produltos: " + Media);
             Console.ReadKey();
         }
     }

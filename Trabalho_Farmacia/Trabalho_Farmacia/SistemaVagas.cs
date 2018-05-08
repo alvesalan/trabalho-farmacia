@@ -13,8 +13,10 @@ namespace Trabalho_Farmacia
         string[] cargo = new string[100];
         string[] benaficio = new string[100];
         int atual = 0;
-        int VagaMaiorNome = int.MaxValue, VagaMenorNome = 0;
+        int VagaMaiorNome = 0, VagaMenorNome = int.MaxValue;
         string NomeMaiorNome = "", NomeMenorNome = "";
+        string Nomeperiodo = "";
+        int SomaC = 0;
         public void cadastrarVaga()
         {
             Console.Clear();
@@ -71,23 +73,23 @@ namespace Trabalho_Farmacia
         public void editarVaga()
         {
             Console.Clear();
-            Console.Write("Digite uma vaga para ser pesquisada: ");
+            Console.Write("Digite uma vaga para ser pesquisado: ");
             string pesquisaV = Console.ReadLine().ToLower().Trim();
             int pocicao = -1;
             for (int i = 0; i < atual; i++)
             {
                 if (pesquisaV == nomeVaga[i])
                 {
-                    pocicao = -1;
+                    pocicao = i;
                 }
             }
             if (pocicao != -1)
             {
-                Console.WriteLine("Quantidade de pessoas para essa vaga: " + curricolo[atual] +
-                    "\nVaga: " + nomeVaga[atual] +
-                    "\nPeriodo: " + periodo[atual] +
-                    "\nCargo: " + cargo[atual] +                    
-                    "\nBeneficios: " + benaficio[atual]);
+                Console.WriteLine("Quantidade de pessoas para essa vaga: " + curricolo[pocicao] +
+                    "\nVaga: " + nomeVaga[pocicao] +
+                    "\nPeriodo: " + periodo[pocicao] +
+                    "\nCargo: " + cargo[pocicao] +
+                    "\nBeneficios: " + benaficio[pocicao]);
                 Console.WriteLine("");
 
                 try
@@ -145,23 +147,26 @@ namespace Trabalho_Farmacia
         {
             Console.Clear();
             Console.Write("digite um nome para busca de vaga: ");
-            string Buscavaga = Console.ReadLine().ToLower();
-            bool encontrou = true;
+            string Buscavaga = Console.ReadLine().ToLower().Trim();
+            bool encontrou = false;
+
             for (int i = 0; i < atual; i++)
             {
-                if (Buscavaga == nomeVaga[atual])
+                if (Buscavaga == nomeVaga[i])
                 {
-                    Console.WriteLine(string.Format("\nQuantidade de funcionarios para essa vaga:{0}\nNome:{1}\nCargo:{2}\nBeneficios:{3}",
+                    Console.WriteLine(string.Format("\nQuantidade de funcionarios para essa vaga: {0}\nNome: {1}\nCargo: {2}\nBeneficios: {3}",
                   curricolo[i], nomeVaga[i], cargo[i], benaficio[i]));
                     encontrou = true;
                     Console.ReadKey();
                     break;
                 }
-                if (!encontrou)
-                {
-                    Console.WriteLine("nome nao encontrado!");
-                    Console.ReadKey();
-                }
+                
+                
+            }
+
+            if (!encontrou)
+            {
+                Console.WriteLine("nome nao encontrado!");
                 
             }
             Console.ReadKey();
@@ -169,11 +174,30 @@ namespace Trabalho_Farmacia
         public void listatVagas()
         {
             Console.Clear();
-            Console.Write("Lista de vagas: ");
+            Console.Write("Lista de vagas");
             for (int i = 0; i < atual; i++)
             {
-                Console.WriteLine(string.Format("\nQuantidade de funcionarios para essa vaga:{0}\nNome:{1}\nCargo:{2}\nBeneficios:{3}",
-                   curricolo[i], nomeVaga[i], cargo[i], benaficio[i]));
+
+                if (periodo[i] == 1)
+                {
+                    Nomeperiodo = "Matutino";
+                }
+                else if (periodo[i] == 2)
+                {
+                    Nomeperiodo = "Vespetino";
+                }
+                else if (periodo[i] == 3)
+                {
+                    Nomeperiodo = " Horario Integral (Matutino e Vespetino)";
+                }
+                else if (periodo[i] == 4)
+                {
+                    Nomeperiodo = "Noturno";
+                }
+
+                Console.WriteLine(string.Format("\nQuantidade de funcionarios para essa vaga: {0}\nNome: {1}\nCargo: {2}\nBeneficios: {3}\nPeriodo: {4}",
+                   curricolo[i], nomeVaga[i], cargo[i], benaficio[i], Nomeperiodo));
+
                 
             }
             Console.ReadKey();
@@ -182,24 +206,38 @@ namespace Trabalho_Farmacia
 
         public void EstatisticaVagas()
         {
+            Console.WriteLine("");
             Console.Write("Total de vagas cadatrado: " + atual);
             for (int i = 0; i < atual; i++)
             {
-                if (VagaMaiorNome > nomeVaga[i].Length)
+                if (nomeVaga[i].Length > VagaMaiorNome)
                 {
+                    VagaMaiorNome = nomeVaga[i].Length;
                     NomeMaiorNome = nomeVaga[i];
                 }
             }
+            Console.WriteLine("\n");
             Console.Write("Nome da vaga com maior nome: " + NomeMaiorNome);
 
             for (int i = 0; i < atual; i++)
             {
-                if (VagaMenorNome < nomeVaga[i].Length)
+                if (nomeVaga[i].Length < VagaMenorNome)
                 {
+                    VagaMenorNome = nomeVaga[i].Length;
                     NomeMenorNome = nomeVaga[i];
                 }
             }
+            Console.WriteLine("\n");
             Console.Write("Nome da vaga com menor nome: " + NomeMenorNome);
+
+            for (int i = 0; i < atual; i++)
+            {
+                 SomaC = SomaC + curricolo[i];
+            }
+
+            double Media = SomaC / atual;
+            Console.WriteLine("\n");
+            Console.WriteLine("Media de quantidade de vagas: " + Media);
             Console.ReadKey();
         }
     }

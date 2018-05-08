@@ -49,7 +49,7 @@ namespace Trabalho_Farmacia
                       |____|____________________________|
                       | 20-|    Voltar ao menu anterior |
                       |____|____________________________|");
-                    Console.WriteLine("Por favor escolha apenas numeros !!");
+                    Console.WriteLine("Por favor digite apenas numeros !!");
                     Console.Write("Escolha sua opção: ");
                     MenuSistemaCliente = Convert.ToInt32(Console.ReadLine());
                 }
@@ -78,6 +78,7 @@ namespace Trabalho_Farmacia
                     SistemaClientes();
 
         }
+
 
         }
         
@@ -163,6 +164,7 @@ namespace Trabalho_Farmacia
                        | 2-  |  Editar produlto         |
                        | 3-  |  Buscar produlto         |
                        | 4-  |  Listar produltos        |
+                       | 5-  |  Estatistica produlto    |
                        |_____|__________________________|
                        | 20- |  Voltar ao menu anterior |
                        |_____|__________________________|");
@@ -197,6 +199,9 @@ namespace Trabalho_Farmacia
                             break;
                         case 4:
                             sistemaprodultos.ListarProdultos();
+                            break;
+                        case 5:
+                            sistemaprodultos.EstatisticaProdultos();
                             break;
                     }
                     SistemaProdultos();
@@ -252,6 +257,8 @@ namespace Trabalho_Farmacia
                 }
                 SistemaVagas();
             }
+
+            //Colocar principal
            
         }
         }

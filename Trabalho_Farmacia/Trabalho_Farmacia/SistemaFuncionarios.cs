@@ -260,8 +260,12 @@ namespace Trabalho_Farmacia
                 Console.WriteLine("");
                 for (int i = 0; i < Atual; i++)
                 {
-                    Console.WriteLine(string.Format("Nome {0} : " + Nomes[i] + 
-                        "\nCargo: "+ Cargo[i], i + 1));
+                    Console.WriteLine(string.Format(@"Nome: " + Nomes[i] +
+                        "\nCargo: " + Cargo[i] +
+                        "\nSalario: " + Salario[i] +
+                        "\nCpf: " + Cpf[i] +
+                        "\nN° Carteira da trabalho: " + Carteiradetrabalho[i] +
+                        "\nEndereço: " + Endereço[i]));
                     Console.WriteLine("");
                 }
                 Console.ReadKey();
