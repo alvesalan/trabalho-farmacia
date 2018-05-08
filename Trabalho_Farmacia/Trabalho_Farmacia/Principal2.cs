@@ -11,6 +11,7 @@ namespace Trabalho_Farmacia
         SistemaFuncionarios sistemafuncionarios = new SistemaFuncionarios();
         SistemaClientes sistemaclientes = new SistemaClientes();
         SistemaProdultos sistemaprodultos = new SistemaProdultos();
+        SistemaVagas sistemavagas = new SistemaVagas();
        
         
         
@@ -153,11 +154,11 @@ namespace Trabalho_Farmacia
 //____________________//_______________//____________________//__________________//_______________________//______________________//________
 
 
-        public void SistemaProdultos()
-        {
+            public void SistemaProdultos()
+            {
 
-            Console.Clear();
-            Console.WriteLine(@"                        _____ __________________________
+                Console.Clear();
+                Console.WriteLine(@"                        _____ __________________________
                        | 1-  |  Cadastrar produlto      | 
                        | 2-  |  Editar produlto         |
                        | 3-  |  Buscar produlto         |
@@ -165,45 +166,93 @@ namespace Trabalho_Farmacia
                        |_____|__________________________|
                        | 20- |  Voltar ao menu anterior |
                        |_____|__________________________|");
-            int MenuSistemaProdultos = 0;
+                Console.WriteLine("");
+                Console.Write("Escolha sua opção: ");
+                int MenuSistemaProdultos = 0;
+                try
+                {
+
+                    
+                    MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Por favor digite apenas numeros !!");
+                    Console.Write("Escolha sua opção: ");
+                    MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+
+                }
+                while (MenuSistemaProdultos != 20)
+                {
+                    switch (MenuSistemaProdultos)
+                    {
+                        case 1:
+                            sistemaprodultos.CadastrarProdulto();
+                            break;
+                        case 2:
+                            sistemaprodultos.EditarProdulto();
+                            break;
+                        case 3:
+                            sistemaprodultos.BuscarProdulto();
+                            break;
+                        case 4:
+                            sistemaprodultos.ListarProdultos();
+                            break;
+                    }
+                    SistemaProdultos();
+                }
+            }   
+
+//______________________//_________________//_________________//______________________//____________________//___________________//________
+        public void SistemaVagas()
+        {
+            Console.Clear();
+            Console.WriteLine(@"                           __________________________________
+                           | 1-  |  Cadastrar Vaga           |
+                           | 2-  |  Editar vaga              |
+                           | 3-  |  Buscar vaga              |
+                           | 4-  |  Listar Vaga              |
+                           | 5-  |  Estatistica Vagas        |
+                           |_____|___________________________|
+                           | 20- |  Voltar ao menu anterior  |
+                           |_____|___________________________|");
+            int MenuSistemaVagas = 0;
             try
             {
 
                 Console.Write("Escolha sua opção: ");
-                MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+                MenuSistemaVagas = Convert.ToInt32(Console.ReadLine());
             }
             catch (Exception)
             {
                 Console.WriteLine("Por favor digite apenas numeros !!");
                 Console.Write("Escolha sua opção: ");
-                MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+                MenuSistemaVagas = Convert.ToInt32(Console.ReadLine());
                 
             }
-            while (MenuSistemaProdultos != 20)
+            while (MenuSistemaVagas != 20)
             {
-                switch (MenuSistemaProdultos)
+                switch (MenuSistemaVagas)
                 {
                     case 1:
-                        sistemaprodultos.CadastrarProdulto();
+                        sistemavagas.cadastrarVaga();
                         break;
                     case 2:
-                        sistemaprodultos.EditarProdulto();
+                        sistemavagas.editarVaga();
                         break;
                     case 3:
-                        sistemaprodultos.BuscarProdulto();
+                        sistemavagas. buscarVagas();
                         break;
                     case 4:
-                        sistemaprodultos.ListarProdultos();
+                        sistemavagas.listatVagas();
+                        break;
+                    case 5:
+                        sistemavagas.EstatisticaVagas();
                         break;
                 }
-                SistemaProdultos();
+                SistemaVagas();
             }
            
         }
-
-//______________________//_________________//_________________//______________________//____________________//___________________//________
-        public void SistemaVagas()
-        {
-            throw new NotImplementedException();
         }
-}    }     
+}         
