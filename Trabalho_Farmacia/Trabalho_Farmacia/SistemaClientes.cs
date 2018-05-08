@@ -15,6 +15,7 @@ namespace ConsoleApp5
         int[] idade = new int[100];
         double[] peso = new double[100];
         int atual = 0;
+        bool ValidacaoIdade = true;
         public void CadastroCliente()
         {
             Console.Clear();
@@ -52,18 +53,24 @@ namespace ConsoleApp5
                 fone[atual] = Console.ReadLine();
             }
 
-            try
+            ValidacaoIdade = true;
+            while (ValidacaoIdade == true)
             {
-                Console.Write("digite sua idade: ");
-                idade[atual] = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.Write("digite sua idade: ");
+                    idade[atual] = Convert.ToInt32(Console.ReadLine());
+                    ValidacaoIdade = false;
+                }
+                catch (Exception)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Digite apenas numeros !!");
+                    Console.WriteLine("Tente novamente");
+                    
+                } 
             }
-            catch (Exception)
-            {
-                Console.WriteLine("Digite apenas numeros !!");
-                Console.WriteLine("Tente novamente");
-                Console.Write("digite sua idade: ");
-                idade[atual] = Convert.ToInt32(Console.ReadLine());
-            }
+            
 
             atual++;
             
