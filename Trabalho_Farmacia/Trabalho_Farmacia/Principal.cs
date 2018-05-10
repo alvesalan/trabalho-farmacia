@@ -17,7 +17,7 @@ namespace Trabalho_Farmacia
         public void Menu()
         {
 
-            Console.BackgroundColor = ConsoleColor.Blue;
+          
             Console.Clear();
             
 
@@ -29,37 +29,37 @@ namespace Trabalho_Farmacia
                     |____|______________________|
                     |                           |
                     |20- Sair                   |
-                    |___________________________|
+                    |___________________________|");
+                    Console.WriteLine("");
+                    Console.Write("Escolha uma opção: ");
 
-");
-            Console.WriteLine("");
-            Console.Write("Escolha uma opção: ");
+
            
-
-
-
-
-
+           
         }
+
 
         public void GerirMenu()
         {
             //Chama método para apresentar o menu para o usuário
             int menuEscolha = 0;
-            try
+            bool ValidarEscolhaMenu = true;  
+          
+            while (ValidarEscolhaMenu == true)
             {
-                Menu();
-               
-                menuEscolha = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Menu();
+                    menuEscolha = Convert.ToInt32(Console.ReadLine());
+                    ValidarEscolhaMenu = false;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("");
+                }
+              
             }
-            catch {
-                Console.Clear();
-                Menu();
-                Console.WriteLine(@"
-Por Favor digite apenas numeros !!");
-                Console.Write("Escolha uma opção: ");
-                menuEscolha = Convert.ToInt32(Console.ReadLine());
-            }
+            
             
 
             while (menuEscolha != 20)

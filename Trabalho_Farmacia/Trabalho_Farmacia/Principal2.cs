@@ -19,40 +19,46 @@ namespace Trabalho_Farmacia
         //_____________//______________//___________________//__________________//__________________//____________________        
 
 
-        public void SistemaClientes()
+        public void MenuCliente()
         {
-
-            Console.Clear();
             Console.WriteLine(@"                       _____ ____________________________ 
                       | 1- |    Cadastrar Cliente       |
                       | 2- |    Editar Clientes         |
                       | 3- |    Buscar Clientes         |  
                       | 4- |    Listar Clientes         |
+                      | 5- |    Estatisticas Cliente    |
                       |____|____________________________|
                       | 20-|    Voltar ao menu anterior |
                       |____|____________________________|");
             Console.WriteLine("");
             Console.Write("Escolha sua opção: ");
+            
+        }
+
+        public void SistemaClientes()
+        {
+            MenuCliente();
+            Console.Clear();            
             int MenuSistemaCliente = 0;
-            try
+            bool ValidarMenuSCliente = true;
+
+            while (ValidarMenuSCliente == true)
             {
+                try
+            {
+                Console.Clear();
+                MenuCliente();
                 MenuSistemaCliente = Convert.ToInt32(Console.ReadLine());
+                ValidarMenuSCliente = false;
             }
             catch (Exception)
             {
-                Console.Clear();
-                Console.WriteLine(@"                       _____ ____________________________ 
-                      | 1- |    Cadastrar Cliente       |
-                      | 2- |    Editar Clientes         |
-                      | 3- |    Buscar Clientes         |  
-                      | 4- |    Listar Clientes         |
-                      |____|____________________________|
-                      | 20-|    Voltar ao menu anterior |
-                      |____|____________________________|");
-                Console.WriteLine("Por favor digite apenas numeros !!");
-                Console.Write("Escolha sua opção: ");
-                MenuSistemaCliente = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("");
             }
+
+
+            }
+            
 
 
             while (MenuSistemaCliente != 20)
@@ -72,6 +78,9 @@ namespace Trabalho_Farmacia
                     case 4:
                         sistemaclientes.ListarCliente();
                         break;
+                    case 5:
+                        sistemaclientes.EstatisticaClientes();
+                            break;
 
 
                 }
@@ -84,13 +93,9 @@ namespace Trabalho_Farmacia
 
         //_____________//_________________//__________________//______________________//______________________//___________________//_________           
 
-        public void SistemaFuncionarios()
+        public void MenuFuncionario()
         {
-            int MenuSistemaFuncionario = 0;
-            try
-            {
-                Console.Clear();
-                Console.WriteLine(@"                     ________________________________
+            Console.WriteLine(@"                     ________________________________
                      | 1- |  Cadastrar Funcionario   |
                      | 2- |  Editar Funcionario      |
                      | 3- |  Buscar Funcionario      |
@@ -98,19 +103,36 @@ namespace Trabalho_Farmacia
                      |____|__________________________|
                      | 20-|  Voltar Menu Anterior    |
                      |____|__________________________|");
-                Console.WriteLine("");
+            Console.WriteLine("");
+            Console.Write("Escolha sua opção: ");
 
+        }
 
+        public void SistemaFuncionarios()
+        {
+            
 
-                Console.Write("Escolha sua opção: ");
-                MenuSistemaFuncionario = Convert.ToInt32(Console.ReadLine());
-            }
-            catch (Exception)
+            Console.Clear();
+            int MenuSistemaFuncionario = 0;
+            bool ValidarMenuSFuncionarios = true;
+
+            while (ValidarMenuSFuncionarios == true)
             {
-                Console.Clear();
-                Console.WriteLine("Por favor digite apenas numeros");
-
+                try
+                {
+                    Console.Clear();
+                    MenuFuncionario();
+                    MenuSistemaFuncionario = Convert.ToInt32(Console.ReadLine());
+                    ValidarMenuSFuncionarios = false;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("");
+                }
+           
+            
             }
+            
 
 
             while (MenuSistemaFuncionario != 20)
@@ -134,30 +156,8 @@ namespace Trabalho_Farmacia
 
                         break;
                 }
-                try
-                {
-                    Console.Clear();
-                    Console.WriteLine(@"                     ________________________________
-                     | 1- |  Cadastrar Funcionario   |
-                     | 2- |  Editar Funcionario      |
-                     | 3- |  Buscar Funcionario      |
-                     | 4- |  Listar Funcionario      |
-                     |____|__________________________|
-                     | 20-|  Voltar Menu Anterior    |
-                     |____|__________________________|");
-                    Console.WriteLine("");
 
-
-
-                    Console.Write("Escolha sua opção: ");
-                    MenuSistemaFuncionario = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Por favor digite apenas numeros");
-                }
-
+                SistemaFuncionarios();
             }
 
         }
@@ -165,11 +165,8 @@ namespace Trabalho_Farmacia
 
         //____________________//_______________//____________________//__________________//_______________________//______________________//________
 
-
-        public void SistemaProdultos()
+        public void MenuSistemaProdultos()
         {
-
-            Console.Clear();
             Console.WriteLine(@"                        _____ __________________________
                        | 1-  |  Cadastrar produlto      | 
                        | 2-  |  Editar produlto         |
@@ -181,23 +178,36 @@ namespace Trabalho_Farmacia
                        |_____|__________________________|");
             Console.WriteLine("");
             Console.Write("Escolha sua opção: ");
-            int MenuSistemaProdultos = 0;
-            try
+        }
+
+        public void SistemaProdultos()
+        {
+
+            Console.Clear();
+            int EscolhaSistemaProdultos = 0;
+            bool ValidarSistemaProdulto = true;
+
+            while (ValidarSistemaProdulto == true)
             {
-
-
-                MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+                try
+               {
+                   Console.Clear();
+                   MenuSistemaProdultos();
+                   EscolhaSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+                   ValidarSistemaProdulto = false;
             }
             catch (Exception)
             {
-                Console.WriteLine("Por favor digite apenas numeros !!");
-                Console.Write("Escolha sua opção: ");
-                MenuSistemaProdultos = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("");
+               
+            }
+            
+            
 
             }
-            while (MenuSistemaProdultos != 20)
+            while (EscolhaSistemaProdultos != 20)
             {
-                switch (MenuSistemaProdultos)
+                switch (EscolhaSistemaProdultos)
                 {
                     case 1:
                         sistemaprodultos.CadastrarProdulto();
@@ -220,9 +230,9 @@ namespace Trabalho_Farmacia
         }
 
         //______________________//_________________//_________________//______________________//____________________//___________________//________
-        public void SistemaVagas()
+
+        public void MenusSistemaVagas()
         {
-            Console.Clear();
             Console.WriteLine(@"                           __________________________________
                            | 1-  |  Cadastrar Vaga           |
                            | 2-  |  Editar vaga              |
@@ -232,20 +242,34 @@ namespace Trabalho_Farmacia
                            |_____|___________________________|
                            | 20- |  Voltar ao menu anterior  |
                            |_____|___________________________|");
+            Console.WriteLine("");
+            Console.Write("Escolha sua opção: ");
+        }
+
+
+        public void SistemaVagas()
+        {
+
+            Console.Clear();
             int MenuSistemaVagas = 0;
-            try
-            {
+            bool ValidarMenuSistemaV = true;
 
-                Console.Write("Escolha sua opção: ");
-                MenuSistemaVagas = Convert.ToInt32(Console.ReadLine());
-            }
-            catch (Exception)
+            while (ValidarMenuSistemaV == true)
             {
-                Console.WriteLine("Por favor digite apenas numeros !!");
-                Console.Write("Escolha sua opção: ");
-                MenuSistemaVagas = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.Clear();
+                    MenusSistemaVagas();
+                    MenuSistemaVagas = Convert.ToInt32(Console.ReadLine());
+                    ValidarMenuSistemaV = false;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("");
 
+                }
             }
+            
             while (MenuSistemaVagas != 20)
             {
                 switch (MenuSistemaVagas)

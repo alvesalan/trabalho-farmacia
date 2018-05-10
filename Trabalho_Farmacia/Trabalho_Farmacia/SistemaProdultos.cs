@@ -32,29 +32,40 @@ namespace Trabalho_Farmacia
            Console.Write("Fornecedor: ");
            Fornecedor[Atual] = Console.ReadLine().ToLower().Trim();
 
-           try 
-	    {	        
-		   Console.Write("Quantidade de produlto: ");
-           Quantidade[Atual] = Convert.ToInt32(Console.ReadLine());
-	    }
-	    catch (Exception)
-	    {
-        Console.WriteLine("Por favor digite apenas numeros!!");
-		Console.Write("Quantidade de produlto: ");
-        Quantidade[Atual] = Convert.ToInt32(Console.ReadLine());
-	    }
 
-           try
+           bool ValidarP = true;
+           while (ValidarP == true)
            {
-               Console.Write("Preço unitario do prdulto: ");
-               PreçoUnitario[Atual] = Convert.ToDouble(Console.ReadLine());
+               try
+               {
+                   Console.Clear();
+                   Console.Write("Quantidade de produlto: ");
+                   Quantidade[Atual] = Convert.ToInt32(Console.ReadLine());
+                   ValidarP = false;
+               }
+               catch (Exception)
+               {
+                   Console.WriteLine("");
+               }
            }
-           catch (Exception)
+
+
+           bool Vall = true;
+           while (Vall == true)
            {
-               Console.WriteLine("Por favor digite apenas numeros !!");
-               Console.Write("Preço unitario do prdulto: ");
-               PreçoUnitario[Atual] = Convert.ToDouble(Console.ReadLine());
+               try
+               {
+                   Console.Clear();
+                   Console.Write("Preço unitario do prdulto: ");
+                   PreçoUnitario[Atual] = Convert.ToDouble(Console.ReadLine());
+                   Vall = false;
+               }
+               catch (Exception)
+               {
+                   Console.WriteLine("");
+               } 
            }
+           
 
            
            Atual++;
@@ -65,66 +76,71 @@ namespace Trabalho_Farmacia
  //___________//_______________//________//_______//________//______________//________________//___________//___________//__________
 
 
-        internal void EditarProdulto()
-        {
-            Console.Clear();
-            Console.Write("Digite o nome do produlto a ser editado: ");
-            string EditarNomeProdulto = Console.ReadLine().ToLower().Trim(); 
-            int Posição = -1;
-            for (int i = 0; i < Atual; i++)
-            {
-                if (EditarNomeProdulto == Nome[i])
-                {
-                    Posição = i;
-                } 
-            }
-            if (Posição != -1)
-            {
-                Console.Clear();
+       internal void EditarProdulto()
+       {
+           Console.Clear();
+           Console.Write("Digite o nome do produlto a ser editado: ");
+           string EditarNomeProdulto = Console.ReadLine().ToLower().Trim();
+           int Posição = -1;
+           for (int i = 0; i < Atual; i++)
+           {
+               if (EditarNomeProdulto == Nome[i])
+               {
+                   Posição = i;
+               }
+           }
+           if (Posição != -1)
+           {
+               Console.Clear();
 
-                Console.WriteLine("\nNome: " + Nome[Posição] +
-                    "\nFornecedor: " + Fornecedor[Posição] +
-                    "\nQuantidade: " + Quantidade[Posição] +
-                    "\nPreço unitario: " + PreçoUnitario[Posição] + 
-                    "\n\n");
+               Console.WriteLine("\nNome: " + Nome[Posição] +
+                   "\nFornecedor: " + Fornecedor[Posição] +
+                   "\nQuantidade: " + Quantidade[Posição] +
+                   "\nPreço unitario: " + PreçoUnitario[Posição] +
+                   "\n\n");
 
-                Console.Write("Nome do produlto: ");
-                Nome[Posição] = Console.ReadLine().ToLower().Trim(); 
+               Console.Write("Nome do produlto: ");
+               Nome[Posição] = Console.ReadLine().ToLower().Trim();
 
-                Console.Write("Fornecedor: ");
-                Fornecedor[Posição] = Console.ReadLine().ToLower().Trim(); 
+               Console.Write("Fornecedor: ");
+               Fornecedor[Posição] = Console.ReadLine().ToLower().Trim();
 
-                try
-                {
-                    Console.Write("Quantidade de produlto: ");
-                    Quantidade[Posição] = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Por favor digite apenas numeros!!");
-                    Console.Write("Quantidade de produlto: ");
-                    Quantidade[Posição] = Convert.ToInt32(Console.ReadLine());
-                }
 
-                try
-                {
-                    Console.Write("Preço unitario do prdulto: ");
-                    PreçoUnitario[Posição] = Convert.ToDouble(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Por favor digite apenas numeros !!");
-                    Console.Write("Preço unitario do prdulto: ");
-                    PreçoUnitario[Posição] = Convert.ToDouble(Console.ReadLine());
-                }
-            }
-            else
-            {
-                Console.WriteLine("Reagistro não encontrado !!");
-                Console.ReadKey();
-            }
-            
-        }
+               bool ValidarP = true;
+               while (ValidarP == true)
+               {
+                   try
+                   {
+                       Console.Clear();
+                       Console.Write("Quantidade de produlto: ");
+                       Quantidade[Posição] = Convert.ToInt32(Console.ReadLine());
+                       ValidarP = false;
+                   }
+                   catch (Exception)
+                   {
+                       Console.WriteLine("");
+                   }
+               }
+
+
+               bool Vall = true;
+               while (Vall == true)
+               {
+                   try
+                   {
+                       Console.Clear();
+                       Console.Write("Preço unitario do prdulto: ");
+                       PreçoUnitario[Posição] = Convert.ToDouble(Console.ReadLine());
+                       Vall = false;
+                   }
+                   catch (Exception)
+                   {
+                       Console.WriteLine("");
+                   }
+               }
+
+           }
+       }
 
 
 //___________//_______________//________//_______//________//______________//________________//___________//___________//__________

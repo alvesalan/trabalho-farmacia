@@ -8,6 +8,7 @@ namespace ConsoleApp5
 {
     class SistemaClientes
     {
+        
         string[] cliente = new string[100];
         string[] cpf = new string[100];
         string[] endereco = new string[100];
@@ -16,66 +17,52 @@ namespace ConsoleApp5
         double[] peso = new double[100];
         int atual = 0;
         bool ValidacaoIdade = true;
+
+        int VagaMaiorNome = 0, VagaMenorNome = int.MaxValue;
+        string NomeMaiorNome = "", NomeMenorNome = "";
+        string Nomeperiodo = "";
+        int SomaC = 0;
+
         public void CadastroCliente()
         {
             Console.Clear();
             Console.Write("Digite seu nome: ");
             cliente[atual] = Console.ReadLine().ToLower().Trim();
-
-            try
-            {
-    
-                Console.Write("Digite seu CPF: ");
-                cpf[atual] = Console.ReadLine().ToLower();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Por favor digite apenas numeros !!");
-                Console.WriteLine("Tente novamente !!");
-                Console.Write("Digite seu CPF: ");
-               cpf[atual] = Console.ReadLine().ToLower();
-                
-            }
-
+            Console.Clear();
+            Console.Write("Digite seu CPF: ");
+            cpf[atual] = Console.ReadLine().ToLower();
+            Console.Clear();      
             Console.Write("Digite seu endereço: ");
             endereco[atual] = Console.ReadLine();
-
-            try
-            {
-                Console.Write("Digite sue telefone: ");
-                fone[atual] = Console.ReadLine();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Por favor digite apenas numeros !!");
-                Console.WriteLine("Tente novamente !");
-                Console.Write("Digite sue telefone: ");
-                fone[atual] = Console.ReadLine();
-            }
-
+            Console.Clear();
+            Console.Write("Digite sue telefone: ");
+            fone[atual] = Console.ReadLine();
+            Console.WriteLine("");
+                
             ValidacaoIdade = true;
             while (ValidacaoIdade == true)
             {
                 try
                 {
+                    Console.Clear();
                     Console.Write("digite sua idade: ");
                     idade[atual] = Convert.ToInt32(Console.ReadLine());
+                   
                     ValidacaoIdade = false;
+                    
                 }
                 catch (Exception)
                 {
-                    Console.Clear();
-                    Console.WriteLine("Digite apenas numeros !!");
-                    Console.WriteLine("Tente novamente");
-                    
+                    Console.WriteLine("");
                 } 
             }
-            
 
             atual++;
             
-
         }
+
+
+
         public void Editarcliente()
         {
             Console.Clear();
@@ -88,11 +75,10 @@ namespace ConsoleApp5
                 {
                     posicao = i;
                 }
-                else if (pesquisa.Substring(0, 3) == cliente[i].Substring(0, 3))
+                else
                 {
-                    Console.Clear();
-                    Console.WriteLine("Em nosso sistema possue o nome: " + cliente[i]);
-                    Console.WriteLine("Caso seja o nome acima volte em (Editar e digite o nome corretamente)");
+                    Console.WriteLine("Nome invalido !!");
+                    Console.ReadKey();
                 }
             }
 
@@ -103,29 +89,44 @@ namespace ConsoleApp5
                     "\n endereco:" + endereco[posicao] +
                     "\n telefone: " + fone[posicao] +
                     "\n idade: " + idade[posicao]);
-                   
+
                 Console.WriteLine("");
-                // Coloque informaçoes
-
-                Console.Write("digite nome: ");
-                cliente[posicao] = Console.ReadLine();
+                Console.Write("Digite seu nome: ");
+                cliente[posicao] = Console.ReadLine().ToLower().Trim();
+                Console.Clear();
                 Console.Write("Digite seu CPF: ");
-                cpf[posicao] = Console.ReadLine();
-                Console.Write("Digite seu endereso: ");
+                cpf[posicao] = Console.ReadLine().ToLower();
+                Console.Clear();
+                Console.Write("Digite seu endereço: ");
                 endereco[posicao] = Console.ReadLine();
-                Console.Write("Digite sue telefone:");
+                Console.Clear();
+                Console.Write("Digite sue telefone: ");
                 fone[posicao] = Console.ReadLine();
-                Console.Write("digite sua idade: ");
-                idade[posicao] = Convert.ToInt32(Console.ReadLine());
-               
-            }
-            else
-            {
-                Console.Write("nome nao encontrado!");
+                Console.WriteLine("");
 
+                ValidacaoIdade = true;
+                while (ValidacaoIdade == true)
+                {
+                    try
+                    {
+                        Console.Clear();
+                        Console.Write("digite sua idade: ");
+                        idade[posicao] = Convert.ToInt32(Console.ReadLine());
+
+                        ValidacaoIdade = false;
+
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("");
+                    }
+                }
+                    
             }
-            Console.ReadKey();
         }
+
+
+
         public void Buscarcliente()
         {
             Console.Clear();
@@ -138,7 +139,7 @@ namespace ConsoleApp5
             {
                 if (Buscanome == cliente[i])
                 {
-                    Console.Write(string.Format("\nNome:{0}\ncpf:{1}\nendereso:{2}\ntelefole:{3}\nIdade:{4}",
+                    Console.Write(string.Format("\nNome: {0}\ncpf: {1}\nendereso: {2}\ntelefole: {3}\nIdade: {4}",
                         cliente[i], cpf[i], endereco[i], fone[i], idade[i]));
                     encontrou = true;
                     break;
@@ -172,7 +173,7 @@ namespace ConsoleApp5
                 Console.Write(string.Format("\nNome: " + cliente[j] +
 "\nCpf: " + cpf[j] +
 "\nEndereço: " + endereco[j] +
-"\nTelefole: " + fone[j] +
+"\nTelefone: " + fone[j] +
 "\nIdade: " + idade[j]));
                 Console.WriteLine("");
                 
@@ -180,6 +181,37 @@ namespace ConsoleApp5
             
             Console.ReadKey();
             
+        }
+
+        public void EstatisticaClientes()
+        {
+            Console.WriteLine("");
+            Console.Write("Total de clientes cadastrado: " + atual);
+
+            for (int i = 0; i < atual; i++)
+            {
+                if (cliente[i].Length > VagaMaiorNome)
+                {
+                    VagaMaiorNome = cliente[i].Length;
+                    NomeMaiorNome = cliente[i];
+                }
+            }
+            Console.WriteLine("\n");
+            Console.Write("Nome do cliente com maior nome: " + NomeMaiorNome);
+
+            for (int i = 0; i < atual; i++)
+            {
+                if (cliente[i].Length < VagaMenorNome)
+                {
+                    VagaMenorNome = cliente[i].Length;
+                    NomeMenorNome = cliente[i];
+                }
+            }
+            Console.WriteLine("\n");
+            Console.Write("Nome do produlto com menor nome: " + NomeMenorNome);
+
+            
+            Console.ReadKey();
         }
 
 
